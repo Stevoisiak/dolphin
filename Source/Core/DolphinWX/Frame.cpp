@@ -721,7 +721,7 @@ void CFrame::UpdateTitle(const std::string &str)
 	else
 	{
 		std::string titleStr = StringFromFormat("%s | %s", scm_rev_str, str.c_str());
-		m_RenderFrame->SetTitle(titleStr);
+		m_RenderFrame->SetTitle(StrToWxStr(titleStr));
 	}
 }
 
