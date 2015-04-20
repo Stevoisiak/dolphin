@@ -1711,7 +1711,7 @@ void CFrame::OnFrameSkip(wxCommandEvent& event)
 void CFrame::OnSelectSlot(wxCommandEvent& event)
 {
 	g_saveSlot = event.GetId() - IDM_SELECT_SLOT_1 + 1;
-	Core::DisplayMessage(StringFromFormat("Selected slot %d", g_saveSlot), 1000);
+	Core::DisplayMessage(StringFromFormat("Selected save state slot %d", g_saveSlot), 1000);
 }
 
 void CFrame::OnLoadCurrentSlot(wxCommandEvent& event)
