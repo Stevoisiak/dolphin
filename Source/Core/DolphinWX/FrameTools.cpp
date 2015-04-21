@@ -200,7 +200,7 @@ wxMenuBar* CFrame::CreateMenu()
 	{
 		loadMenu->Append(IDM_LOAD_SLOT_1 + i - 1, GetMenuLabel(HK_LOAD_STATE_SLOT_1 + i - 1));
 		saveMenu->Append(IDM_SAVE_SLOT_1 + i - 1, GetMenuLabel(HK_SAVE_STATE_SLOT_1 + i - 1));
-		slotSelectMenu->Append(IDM_SELECT_SLOT_1 + i - 1, GetMenuLabel(HK_SELECT_STATE_SLOT_1 + i - 1));
+		slotSelectMenu->AppendRadioItem(IDM_SELECT_SLOT_1 + i - 1, GetMenuLabel(HK_SELECT_STATE_SLOT_1 + i - 1));
 	}
 
 	loadMenu->AppendSeparator();
