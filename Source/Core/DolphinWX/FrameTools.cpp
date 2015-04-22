@@ -155,6 +155,19 @@ wxMenuBar* CFrame::CreateMenu()
 	fileMenu->AppendSeparator();
 	fileMenu->Append(IDM_BROWSE, _("&Browse for ISOs..."));
 	fileMenu->AppendSeparator();
+
+	wxMenu *recentMenu = new wxMenu;
+	fileMenu->AppendSubMenu(recentMenu, _("Recent Files"));
+
+	// Populate recent files
+	m_FileHistory = new wxFileHistory(10);
+	m_FileHistory->UseMenu(recentMenu);
+	m_FileHistory->AddFilesToMenu(recentMenu);
+	// m_Config crashes
+	// m_FileHistory->Load(*m_Config);
+
+	fileMenu->AppendSeparator();
+
 	fileMenu->Append(wxID_EXIT, _("E&xit") + wxString("\tAlt+F4"));
 	menubar->Append(fileMenu, _("&File"));
 

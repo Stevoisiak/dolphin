@@ -563,6 +563,11 @@ bool CFrame::RendererIsFullscreen()
 
 void CFrame::OnQuit(wxCommandEvent& WXUNUSED (event))
 {
+	// m_Config crashes
+	// m_FileHistory->Save(*m_Config);
+	delete m_Config;
+
+	delete m_FileHistory;
 	Close(true);
 }
 

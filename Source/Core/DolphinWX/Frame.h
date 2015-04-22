@@ -10,8 +10,10 @@
 #include <vector>
 #include <wx/bitmap.h>
 #include <wx/chartype.h>
+#include "wx/config.h"
 #include <wx/defs.h>
 #include <wx/event.h>
+#include "wx/filehistory.h"
 #include <wx/frame.h>
 #include <wx/gdicmn.h>
 #include <wx/image.h>
@@ -46,6 +48,7 @@ class wxAuiManager;
 class wxAuiManagerEvent;
 class wxAuiNotebook;
 class wxAuiNotebookEvent;
+class wxFileHistory;
 class wxListEvent;
 class wxMenuItem;
 class wxWindow;
@@ -168,6 +171,8 @@ private:
 	CLogWindow* m_LogWindow;
 	LogConfigWindow* m_LogConfigWindow;
 	FifoPlayerDlg* m_FifoPlayerDlg;
+	wxFileHistory* m_FileHistory;
+	wxConfig* m_Config;
 	bool UseDebugger;
 	bool m_bBatchMode;
 	bool m_bEdit;
