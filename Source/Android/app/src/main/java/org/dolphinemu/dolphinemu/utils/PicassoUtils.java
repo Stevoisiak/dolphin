@@ -17,19 +17,12 @@ public class PicassoUtils
   public static void loadGameBanner(ImageView imageView, GameFile gameFile)
   {
     File cover = new File(gameFile.getCustomCoverPath());
-    if (cover.exists())
+    if (!cover.exists())
     {
-      Picasso.with(imageView.getContext())
-              .load(cover)
-              .noFade()
-              .noPlaceholder()
-              .fit()
-              .centerInside()
-              .config(Bitmap.Config.ARGB_8888)
-              .error(R.drawable.no_banner)
-              .into(imageView);
+      cover = new File(gameFile.getCoverPath());
     }
-    else if ((cover = new File(gameFile.getCoverPath())).exists())
+
+    if (cover.exists())
     {
       Picasso.with(imageView.getContext())
               .load(cover)
